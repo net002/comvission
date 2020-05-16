@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <img src="{{url_for('static', filename='002.2.png')}}" style="width:1300px;height:800px;" id="low3">
+    <img src="{{url_for('static', filename='002.png')}}" style="width:1970px;height:75px;" id="low">
+    <img src="{{url_for('static', filename='002.png')}}" style="width:1970px;height:75px;" id="low2">
+    <img src="{{url_for('static', filename='006.png')}}" style="width:200px;height:200px;" id="icon">
+    <h1>
+        <div id="name">Comvision Project </div>
+    </h1>
+</body>
+<div class="container" id="input">
+    <div class="row pt-5">
+        <div class="col">
+            <div class="row justify-content-md-center">
+                <div class="col-md-7">
+
+
+                    <h1>Upload an image</h1>
+                    <h5>***** รูปภาพที่ใส่ในSelect image กับ Select image mask จะเป็นรูปเดียวกันแต่แตกกันตรงที่ รูปภาพ ใน Select image mask จะมีกรอบอยู่ ******</h5>
+                    <hr>
+
+                    <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data" >
+
+                        <div class="form-group">
+                            <label>Select image</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="image[]" multiple = "true">
+                                <label class="custom-file-label" for="image">Select image...</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label>Select image mask (อัพโหลดรูปภาพที่มีกรอปอยู่)</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="image3[]" multiple="true">
+                                <label class="custom-file-label" for="image">Select image mask...</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label>Select image goal(อัพโหลดรูปภาพที่ต้องการจะเปลี่ยน)</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="image2[]" multiple="true">
+                                <label class="custom-file-label" for="image">Select image goal...</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+
+                    </form>
+
+
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Mitr&display=swap');
+
+    html,
+    body {
+        font-family: 'Mitr', sans-serif !important;
+    }
+
+    #icon {
+        position: absolute;
+        top: -75px;
+        left: -50px;
+
+
+    }
+
+    #low {
+        position: absolute;
+        top: 862px;
+        left: -50px;
+
+
+    }
+
+    #low2 {
+        position: absolute;
+        top: 0px;
+        left: -50px;
+
+
+    }
+
+    #low3 {
+        position: absolute;
+        top: 70px;
+        left: 300px;
+
+
+    }
+
+    #input {
+        position: absolute;
+        top: 100px;
+        left: 350px;
+
+
+    }
+
+    #but1 {
+        position: absolute;
+        top: 750px;
+        left: 350px;
+
+
+    }
+
+    #but2 {
+        position: absolute;
+        top: 750px;
+        left: 1450px;
+
+
+    }
+
+    #name {
+        position: absolute;
+        top: 10px;
+        left: 140px;
+
+
+    }
+</style>
